@@ -92,7 +92,7 @@ Then run the following commands to build the system:
 ```
 $ mkdir build
 $ cd build
-$ cmake ..
+$ cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ..
 $ make
 ```
 
@@ -100,7 +100,7 @@ If you want to compile the system in debug mode, pass in the following flag to c
 Debug mode:
 
 ```
-$ cmake -DCMAKE_BUILD_TYPE=Debug ..
+$ cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ..
 $ make -j`nproc`
 ```
 This enables [AddressSanitizer](https://github.com/google/sanitizers) by default.
@@ -108,7 +108,7 @@ This enables [AddressSanitizer](https://github.com/google/sanitizers) by default
 If you want to use other sanitizers,
 
 ```
-$ cmake -DCMAKE_BUILD_TYPE=Debug -DBUSTUB_SANITIZER=thread ..
+$ cmake -DCMAKE_BUILD_TYPE=Debug -DBUSTUB_SANITIZER=thread -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ..
 $ make -j`nproc`
 ```
 
